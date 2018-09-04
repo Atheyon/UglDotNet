@@ -1,0 +1,44 @@
+fields
+	- fields
+		array
+			type field
+	- types
+		array
+			type type
+types
+	- arrayField
+		kind object
+		- type
+			type string
+			required true
+		- min
+			type int
+		- max
+			type int
+	- field
+		kind object
+		type string
+		array
+			type field
+		- type
+			type string
+			default void
+		- array
+			type arrayField
+		- required
+			type bool
+		- default
+			type string
+	- type
+		kind object
+		type string
+		array
+			type field
+		- kind
+			type string
+			required true
+		- type
+			type string
+			default void
+		- array
+			type arrayField

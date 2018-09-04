@@ -1,0 +1,91 @@
+﻿{
+	fields: [
+		{
+			key: 'fields',
+			type: 'void',
+			array: {
+				type: 'field'
+			}
+		},
+		{
+			key: 'types',
+			type: 'void',
+			array: {
+				type: 'type'
+			}
+		}
+	],
+	types: [
+		{
+			key: 'arrayField',
+			kind: SchemaTypeKind.Object,
+			type: 'void',
+			fields: [
+				{
+					key: 'type',
+					type: 'string',
+					required: true
+				},
+				{
+					key: 'min',
+					type: 'int'
+				},
+				{
+					key: 'max',
+					type: 'int'
+				}
+			]
+		},
+		{
+			key: 'field',
+			kind: SchemaTypeKind.Object,
+			type: 'string',
+			array: {
+				type: 'field'
+			},
+			fields: [
+				{
+					key: 'type',
+					type: 'string',
+					default: 'void'
+				},
+				{
+					key: 'array',
+					type: 'arrayField'
+				},
+				{
+					key: 'required',
+					type: 'bool'
+				},
+				{
+					key: 'default',
+					type: 'string'
+				}
+			]
+		},
+		{
+			key: 'type',
+			kind: SchemaTypeKind.Object,
+			type: 'string',
+			array: {
+				type: 'field'
+			},
+			fields: [
+				{
+					key: 'kind',
+					type: 'string',
+					required: true
+				},
+				{
+					key: 'type',
+					type: 'string',
+					default: 'void'
+				},
+				{
+					key: 'array',
+					type: 'arrayField'
+				}
+			]
+		}
+	]
+}
